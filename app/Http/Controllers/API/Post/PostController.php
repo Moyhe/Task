@@ -8,6 +8,7 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Http\Resources\PostResource;
 use App\Models\Post;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -39,6 +40,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+
         return new PostResource($post);
     }
 
@@ -47,6 +49,7 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
+
         $data = $request->validated();
 
         $post->update($data);
@@ -59,6 +62,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return response('', 200);
     }
 }
