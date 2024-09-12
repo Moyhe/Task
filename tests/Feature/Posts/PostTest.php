@@ -31,6 +31,37 @@ class PostTest extends TestCase
         $response->assertSee('title');
     }
 
+
+    public function test_user_can_list_all_posts(): void
+    {
+        $user = User::factory()->create();
+
+        Post::factory()->count(4)->create();
+
+        $response = $this->jwtAs($user)->getJson(route('posts.index'));
+
+        $response->assertOk();
+
+        $response->assertSee('title');
+    }
+
+
+    public function test_user_can_show_a_post(): void
+    {
+        $user = User::factory()->create();
+
+        $post = Post::factory([
+            'author_id' => $user->id
+        ])->create();
+
+        $response = $this->jwtAs($user)->getJson(route('posts.show', $post));
+
+        $response->assertOk();
+
+        $response->assertSee('content');
+    }
+
+
     public function test_user_can_delete_his_own__post(): void
     {
         $user = User::factory()->create();
