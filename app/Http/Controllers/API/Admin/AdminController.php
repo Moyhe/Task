@@ -20,7 +20,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return PostResource::collection(Post::with('author')->paginate(10));
+        return PostResource::collection(Post::with(['author', 'category'])
+            ->filter(request(['title', 'category', 'author', 'created_at']))
+            ->paginate(10))->withQueryString();
     }
 
     /**
