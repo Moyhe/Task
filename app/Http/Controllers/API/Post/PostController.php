@@ -18,6 +18,16 @@ class PostController extends Controller
     use ModelNotFound;
 
     /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        return PostResource::collection(Post::with(['author', 'category'])
+            ->filter(request(['search', 'category', 'author', 'created_at']))
+            ->paginate(10))->withQueryString();
+    }
+
+    /**
      * Store a newly created resource in storage.
      */
     public function store(StorePostRequest $request)
@@ -28,6 +38,16 @@ class PostController extends Controller
         $post = Post::create($data);
 
         return new PostResource($post);
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Post $post)
+    {
+        $this->modelNotFound($post);
+
+        return new PostResource($post->load('author'));
     }
 
     /**

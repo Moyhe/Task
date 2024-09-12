@@ -27,9 +27,9 @@ class StorePostRequest extends FormRequest
         return [
             'title' => ['required'],
             'content' => ['required'],
-            'category' => [
+            'category_id' => [
                 'required',
-                Rule::in(['Technology', 'Lifestyle', 'Education'])
+                Rule::exists('categories', 'id')
             ]
         ];
     }

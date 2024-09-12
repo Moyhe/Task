@@ -8,6 +8,7 @@ use Illuminate\Auth\Access\Response;
 
 class PostPolicy
 {
+
     /**
      * Determine whether the user can update the model.
      */
