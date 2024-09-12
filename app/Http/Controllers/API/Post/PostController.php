@@ -9,10 +9,9 @@ use App\Http\Requests\UpdatePostRequest;
 use App\Http\Resources\PostResource;
 use App\Models\Post;
 use App\Trait\ModelNotFound;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 
 class PostController extends Controller
 {

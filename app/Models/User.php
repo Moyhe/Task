@@ -43,7 +43,7 @@ class User extends Authenticatable implements JWTSubject
      */
     public function posts(): HasMany
     {
-        return $this->hasMany(Post::class, 'author_id');
+        return $this->hasMany(Post::class, 'author_id')->chaperone();
     }
 
     /**
