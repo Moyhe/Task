@@ -9,11 +9,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
-// admins
+// admin
+Route::post('admin/login', [AdminAuthController::class, 'login'])->name('admin.login');
 
 Route::middleware(['auth:jwt', 'role:admin'])->prefix('admin')->group(function () {
 
     Route::apiResource('posts', AdminController::class);
+    Route::post('create', [AdminAuthController::class, 'register'])->name('admin.create');
 });
 
 
@@ -26,13 +28,8 @@ Route::middleware(['auth:jwt', 'role:author'])->group(function () {
 });
 
 
-
 Route::middleware('guest')->group(function () {
 
-    // admin
-    Route::post('admin/login', [AdminAuthController::class, 'login'])->name('admin.login');
-
-    // users
     Route::post('register', [AuthUserController::class, 'register'])->name('api.register');
     Route::post('login', [AuthUserController::class, 'login'])->name('api.login');
 });

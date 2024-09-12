@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        // User::factory()->create([
-        //     'name' => 'Geni',
-        //     'email' => 'Geni@gmail.com',
-        //     'role' => 'admin',
-        // ]);
+        User::factory()->create([
+            'name' => 'Geni',
+            'email' => 'Geni@gmail.com',
+            'role' => 'admin',
+        ]);
 
         CategoryFactory::new()->count(3)->create();
     }
