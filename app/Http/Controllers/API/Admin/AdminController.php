@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Post;
-
+namespace App\Http\Controllers\API\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
@@ -9,13 +8,20 @@ use App\Http\Requests\UpdatePostRequest;
 use App\Http\Resources\PostResource;
 use App\Models\Post;
 use App\Trait\ModelNotFound;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Gate;
 
-
-class PostController extends Controller
+class AdminController extends Controller
 {
     use ModelNotFound;
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        return PostResource::collection(Post::with('author')->paginate(10));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -31,13 +37,22 @@ class PostController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     */
+    public function show(Post $post)
+    {
+        $this->modelNotFound($post);
+
+        return new PostResource($post->load('author'));
+    }
+
+
+    /**
      * Update the specified resource in storage.
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
         $this->modelNotFound($post);
-
-        Gate::authorize('update', $post);
 
         $data = $request->validated();
 
@@ -52,8 +67,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $this->modelNotFound($post);
-
-        Gate::authorize('delete', $post);
 
         $post->delete();
 

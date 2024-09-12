@@ -2,13 +2,14 @@
 
 namespace App\Trait;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 trait ModelNotFound
 {
-    public function modelNotFound()
+    public function modelNotFound(Model $model)
     {
-        if (! $this->exists()) {
+        if (! $model->exists()) {
             throw new ModelNotFoundException();
         }
     }
