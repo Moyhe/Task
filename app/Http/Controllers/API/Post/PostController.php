@@ -10,6 +10,7 @@ use App\Http\Resources\PostResource;
 use App\Models\Post;
 use App\Trait\ModelNotFound;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Gate;
 
 
@@ -22,9 +23,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        return PostResource::collection(Post::with(['author', 'category'])
-            ->filter(request(['title', 'category', 'author', 'created_at']))
-            ->paginate(10))->withQueryString();
+        return Cache::remember('posts', now()->addMinutes(10), function () {
+            return PostResource::collection(Post::with(['author', 'category'])
+                ->filter(request(['title', 'category', 'author', 'created_at']))
+                ->paginate(10))->withQueryString();
+        });
     }
 
     /**
@@ -36,6 +39,8 @@ class PostController extends Controller
         $data['author_id'] = Auth::id();
 
         $post = Post::create($data);
+
+        Cache::forget('posts');
 
         return new PostResource($post);
     }
@@ -63,6 +68,8 @@ class PostController extends Controller
 
         $post->update($data);
 
+        Cache::forget('posts');
+
         return new PostResource($post);
     }
 
@@ -76,6 +83,8 @@ class PostController extends Controller
         Gate::authorize('delete', $post);
 
         $post->delete();
+
+        Cache::forget('posts');
 
         return response('', 200);
     }

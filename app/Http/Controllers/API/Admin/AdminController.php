@@ -10,6 +10,7 @@ use App\Models\Post;
 use App\Trait\ModelNotFound;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class AdminController extends Controller
 {
@@ -20,9 +21,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return PostResource::collection(Post::with(['author', 'category'])
-            ->filter(request(['title', 'category', 'author', 'created_at']))
-            ->paginate(10))->withQueryString();
+        return Cache::remember('posts', now()->addMinutes(10), function () {
+            return PostResource::collection(Post::with(['author', 'category'])
+                ->filter(request(['title', 'category', 'author', 'created_at']))
+                ->paginate(10))->withQueryString();
+        });
     }
 
     /**
@@ -34,6 +37,8 @@ class AdminController extends Controller
         $data['author_id'] = Auth::id();
 
         $post = Post::create($data);
+
+        Cache::forget('posts');
 
         return new PostResource($post);
     }
@@ -60,6 +65,8 @@ class AdminController extends Controller
 
         $post->update($data);
 
+        Cache::forget('posts');
+
         return new PostResource($post);
     }
 
@@ -71,6 +78,8 @@ class AdminController extends Controller
         $this->modelNotFound($post);
 
         $post->delete();
+
+        Cache::forget('posts');
 
         return response('', 200);
     }
