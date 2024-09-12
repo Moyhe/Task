@@ -22,7 +22,7 @@ Route::middleware(['auth:jwt', 'role:admin'])->prefix('admin')->group(function (
 Route::middleware(['auth:jwt', 'role:author'])->group(function () {
 
     Route::apiResource('posts', PostController::class);
-    Route::post('posts/{id}/comments', [CommentController::class, 'store']);
+    Route::post('posts/{id}/comments', [CommentController::class, 'store'])->name('comment.store');
 });
 
 
