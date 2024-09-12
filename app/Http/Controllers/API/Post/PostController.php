@@ -23,7 +23,7 @@ class PostController extends Controller
     public function index()
     {
         return PostResource::collection(Post::with(['author', 'category'])
-            ->filter(request(['search', 'category', 'author', 'created_at']))
+            ->filter(request(['title', 'category', 'author', 'created_at']))
             ->paginate(10))->withQueryString();
     }
 
