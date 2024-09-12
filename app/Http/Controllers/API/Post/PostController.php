@@ -16,14 +16,6 @@ use Illuminate\Support\Facades\Gate;
 class PostController extends Controller
 {
     use ModelNotFound;
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return PostResource::collection(Post::with('author')->paginate(10));
-    }
-
 
     /**
      * Store a newly created resource in storage.
@@ -36,16 +28,6 @@ class PostController extends Controller
         $post = Post::create($data);
 
         return new PostResource($post);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Post $post)
-    {
-        $this->modelNotFound();
-
-        return new PostResource($post->load('author'));
     }
 
     /**
