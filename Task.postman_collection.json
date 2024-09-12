@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "4058d5cf-d141-48eb-992a-4b22fef5c9fc",
+		"name": "Task",
+		"description": "Blog platform api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32182636"
+	},
+	"item": [
+		{
+			"name": "/api/register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "44|uUApUfFWwkDeS5csK8OqrLUurrt6eGAjOF4UPR70ad36e2ef"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"name\": \"ken\",\n  \"email\": \"ken@gmail.com\",\n  \"password\": \"123456789\",\n  \"password_confirmation\": \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2MTczNTg5LCJleHAiOjE3MjYxNzcxODksIm5iZiI6MTcyNjE3MzU4OSwianRpIjoiTmtaTEREWEJYSFIwNFBxMCIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.t16ZNptaLcMcqw-77-iwOoZFTE4TgWEH-5RrEcN-n2Q"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"email\": \"ken@gmail.com\",\n  \"password\": \"123456789\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/posts",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2MTczNTg5LCJleHAiOjE3MjYxNzcxODksIm5iZiI6MTcyNjE3MzU4OSwianRpIjoiTmtaTEREWEJYSFIwNFBxMCIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.t16ZNptaLcMcqw-77-iwOoZFTE4TgWEH-5RrEcN-n2Q"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/posts",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2MTczNTg5LCJleHAiOjE3MjYxNzcxODksIm5iZiI6MTcyNjE3MzU4OSwianRpIjoiTmtaTEREWEJYSFIwNFBxMCIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.t16ZNptaLcMcqw-77-iwOoZFTE4TgWEH-5RrEcN-n2Q"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"title\": \"jave\",\n   \"content\": \"java programming\",\n   \"category_id\" : \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/posts/{post}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/posts/2"
+			},
+			"response": []
+		},
+		{
+			"name": "api/posts/{id}/comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"comment\": \"i love golf\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/posts/4/comments"
+			},
+			"response": []
+		},
+		{
+			"name": "api/posts?search",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/api/posts/{post}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/posts/2"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/posts/{post}",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"title\": \"java i love\",\n   \"content\": \"java programming\",\n   \"category_id\" : \"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/posts/3"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/admin/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"Geni@gmail.com\",\n    \"password\" : \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/admin/login"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/admin/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2FkbWluL2xvZ2luIiwiaWF0IjoxNzI2MTc1NDMzLCJleHAiOjE3MjYxNzkwMzMsIm5iZiI6MTcyNjE3NTQzMywianRpIjoiejNmcG9UbkhpY1RhMmZEQiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.G5CGHqaBl1zYql0-6xhdf79JviCswFngZZvDAkqtvE0"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"admin\",\n    \"email\" : \"admin@gmail.com\",\n    \"password\" : \"12345678\",\n    \"password_confirmation\" : \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/admin/create"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/admin/posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2FkbWluL2xvZ2luIiwiaWF0IjoxNzI2MTc1NDMzLCJleHAiOjE3MjYxNzkwMzMsIm5iZiI6MTcyNjE3NTQzMywianRpIjoiejNmcG9UbkhpY1RhMmZEQiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.G5CGHqaBl1zYql0-6xhdf79JviCswFngZZvDAkqtvE0"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"title\": \"jave\",\n   \"content\": \"java programming\",\n   \"category_id\" : \"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/admin/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "api/admin/posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2FkbWluL2xvZ2luIiwiaWF0IjoxNzI2MTc1NDMzLCJleHAiOjE3MjYxNzkwMzMsIm5iZiI6MTcyNjE3NTQzMywianRpIjoiejNmcG9UbkhpY1RhMmZEQiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.G5CGHqaBl1zYql0-6xhdf79JviCswFngZZvDAkqtvE0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/admin/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "api/admin/posts/{post}",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "api/admin/posts/{post}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2FkbWluL2xvZ2luIiwiaWF0IjoxNzI2MTc1NDMzLCJleHAiOjE3MjYxNzkwMzMsIm5iZiI6MTcyNjE3NTQzMywianRpIjoiejNmcG9UbkhpY1RhMmZEQiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.G5CGHqaBl1zYql0-6xhdf79JviCswFngZZvDAkqtvE0"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/admin/posts/3"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/admin/posts/{post}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2FkbWluL2xvZ2luIiwiaWF0IjoxNzI2MTc1NDMzLCJleHAiOjE3MjYxNzkwMzMsIm5iZiI6MTcyNjE3NTQzMywianRpIjoiejNmcG9UbkhpY1RhMmZEQiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.G5CGHqaBl1zYql0-6xhdf79JviCswFngZZvDAkqtvE0"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"title\": \"java\",\n   \"content\": \"java programming\",\n   \"category_id\" : \"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/admin/posts/4"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2MTczNTg5LCJleHAiOjE3MjYxNzcxODksIm5iZiI6MTcyNjE3MzU4OSwianRpIjoiTmtaTEREWEJYSFIwNFBxMCIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.t16ZNptaLcMcqw-77-iwOoZFTE4TgWEH-5RrEcN-n2Q"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": "",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}

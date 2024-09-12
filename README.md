@@ -27,3 +27,7 @@
 7.to test the api run
 
     php artisan test
+
+## Postman Collection
+
+You can download and import the Postman collection [here](/Task.postman_collection.json).
