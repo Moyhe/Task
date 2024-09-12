@@ -176,10 +176,154 @@
 			"response": []
 		},
 		{
-			"name": "api/posts?search",
+			"name": "api/posts?title",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2MTc4ODU1LCJleHAiOjE3MjYxODI0NTUsIm5iZiI6MTcyNjE3ODg1NSwianRpIjoibjdSd1AzVVhZakp0VWdjMyIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.r9m15-0nHOAt-bGaGETvWTPCEwKgXCNf-JE2Q4n52Ig"
+					}
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/posts?title=php",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "php"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/posts?author",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2MTc4ODU1LCJleHAiOjE3MjYxODI0NTUsIm5iZiI6MTcyNjE3ODg1NSwianRpIjoibjdSd1AzVVhZakp0VWdjMyIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.r9m15-0nHOAt-bGaGETvWTPCEwKgXCNf-JE2Q4n52Ig"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/posts?author=ken",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "ken"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/posts?category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2MTc4ODU1LCJleHAiOjE3MjYxODI0NTUsIm5iZiI6MTcyNjE3ODg1NSwianRpIjoibjdSd1AzVVhZakp0VWdjMyIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.r9m15-0nHOAt-bGaGETvWTPCEwKgXCNf-JE2Q4n52Ig"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/posts?category=Education",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Education"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/posts?created_at",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2MTc4ODU1LCJleHAiOjE3MjYxODI0NTUsIm5iZiI6MTcyNjE3ODg1NSwianRpIjoibjdSd1AzVVhZakp0VWdjMyIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.r9m15-0nHOAt-bGaGETvWTPCEwKgXCNf-JE2Q4n52Ig"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/posts?created_at=2024-09-12,2024-09-15 13:02:27",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "created_at",
+							"value": "2024-09-12,2024-09-15 13:02:27"
+						}
+					]
+				}
 			},
 			"response": []
 		},
